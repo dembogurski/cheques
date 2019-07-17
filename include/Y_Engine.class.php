@@ -1213,7 +1213,7 @@ echo "<script>parent.alert('error')</script>" ;
 				}
 			}
 			if( !empty( $qry ) ){
-				$qry="ALTER IGNORE TABLE " . $Table->name .
+				$qry="ALTER  TABLE " . $Table->name .
 					$qry;
 				$DB->Query( $qry );
 			}

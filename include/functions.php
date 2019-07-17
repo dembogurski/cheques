@@ -811,8 +811,9 @@ function extense( $value=0, $type=0, $upper=1 ){
 	$correction0 = str_replace("uno millon", "un millon", $ret);
 	$correction1 = str_replace("UNO MILLON", "UN MILLON", $correction0);
     $correction2 = str_replace("UNO MIL MILLON", "UN MIL MILLONES", $correction1);		
+	$correction3 = str_replace("UNO MIL", "UN MIL", $correction2);
 
-    return ($correction2);
+    return ($correction3);
 
 } // extense() -------------------------------------------------------------
 

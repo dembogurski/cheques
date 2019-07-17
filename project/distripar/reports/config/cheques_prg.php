@@ -36,6 +36,8 @@ $pago_desde = $sup['pago_desde']==''?'2000-01-01':$sup['pago_desde'];
 $pago_hasta = $sup['pago_hasta']==''?'2099-01-01':$sup['pago_hasta'];
 $orden_de = $sup['prov_ruc']==''?'%':$sup['prov_ruc'];
 
+$complemento = $sup['concepto']==''?'%':'%'.$sup['concepto'].'%';
+
 $Q0 = $DB;
 
 $sql_banco = "SELECT b_nombre AS nombre_banco,c.cta_num ,cta_nombre as nombre_cuenta FROM bcos b, bcos_ctas c WHERE b.b_cod = c.cta_bco  AND b.b_cod = $banco  AND cta_num = '$cuenta'";
@@ -56,7 +58,7 @@ $T->Set('pago_hasta',flip($pago_hasta));
 
 $query0 = "SELECT  chq_num AS NroCheque, DATE_FORMAT( chq_fecha_emis,'%d-%m-%Y') AS Fecha_Emision , DATE_FORMAT( chq_fecha_pag,'%d-%m-%Y') AS FechaPago, chq_benef AS OrdenDe, chq_valor AS Valor, chq_tipo AS Tipo, chq_compl AS Doc,chq_estado AS Estado, chq_mot_anul AS MotAnul   "
         . "FROM bcos_chq WHERE chq_bco like '$banco' and chq_cta like '$cuenta' and chq_fecha_emis between '$emis_desde' and '$emis_hasta'"
-        . "and   chq_fecha_pag between '$pago_desde' and '$pago_hasta' and chq_benef like '$orden_de' and chq_estado like '$estado'";
+        . "and   chq_fecha_pag between '$pago_desde' and '$pago_hasta' and chq_benef like '$orden_de' and chq_estado like '$estado' and chq_compl like '$complemento'";
 
 //echo $query0;
 

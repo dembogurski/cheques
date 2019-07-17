@@ -130,7 +130,17 @@ $Obj->Add(
         G_SHOW_ => "2",
         G_CHANGE_ => "2"));		
 		
-
+$Obj->Add(
+    array(
+        F_NAME_ => "concepto",
+        F_ALIAS_ => "Concepto",
+        F_HELP_ => "Concepto",
+        F_TYPE_ => "text",
+        F_LENGTH_ => "47",
+        F_NODB_ => "1",
+        F_ORD_ => "92",
+        G_SHOW_ => "2",
+        G_CHANGE_ => "2"));
  
 
 $Obj->Add(

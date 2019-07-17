@@ -8,6 +8,21 @@
 
 <!-- begin: general_header noeval -->
        <link rel="stylesheet" type="text/css" href="templates/reports.css" /> 
+	   <script src='include/jquery-1.11.1.js'></script>
+	   <script language="javascript">
+              
+	     $(function(){
+                $(document).keypress(function(e) {
+                   var key = e.keyCode;  
+                   if(key === 121) { //F10                        
+                       $(".valor").each(function(){
+						   var v = $(this).html() .replace(/\./g,"");
+						   $(this).html(v);
+					   });
+                   } 
+		  });
+		});
+		</script>
 	<treset_page>
 <!-- end:   general_header -->
 
@@ -54,11 +69,9 @@
         <th>Fecha_Emision</th>
         <th>FechaPago</th>
         <th>OrdenDe</th>
-        <th>Valor</th>
-        <th>Tipo</th>
+        <th>Valor</th> 
         <th>Doc</th>
-        <th>Estado</th>
-        <th>MotAnul</th>
+         
     </tr>
 </thead>
  
@@ -70,11 +83,9 @@
             <td class="itemc">{query0_Fecha_Emision}</td>
             <td class="itemc">{query0_FechaPago}</td>
             <td class="item">{query0_OrdenDe}</td>
-            <td class="num">{query0_Valor}</td>
-            <td class="itemc">{query0_Tipo}</td>
+            <td class="num  valor">{query0_Valor}</td> 
             <td class="item">{query0_Doc}</td>
-            <td class="itemc">{query0_Estado}</td>
-            <td class="item">{query0_MotAnul}</td>
+             
          </tr>
 <!-- end:    query0_data_row -->
 <!-- begin: query0_total_row -->
@@ -96,7 +107,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td class="num" style="font-size: 12px;font-weight: bolder">{subtotal0_Valor}</td>
+            <td class="num valor" style="font-size: 12px;font-weight: bolder">{subtotal0_Valor}</td>
             <td></td>
             <td></td>
             <td></td>
