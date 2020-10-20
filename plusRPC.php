@@ -333,7 +333,10 @@ function query ( $query ) {
 	
 // ##### 30
 	// To return a correct charset
-	header("Content-type: text/javascript; charset=iso-8859-1");	
+	header("Content-type: text/javascript; charset=iso-8859-1");
+    if($Global[ 'object'] == "chq_benef"){
+        header("Content-type: text/javascript; charset=utf-8");	
+    }	
 // ##### 30 end
 
 	echo $delimiter . "_0" . $delimiter; 

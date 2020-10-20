@@ -8,7 +8,8 @@
  *  ==========================================================
  */  
  
-
+//header("Content-type: text/javascript; charset=iso-8859-1");	
+header("Content-type: text/javascript; charset=iso-utf-8");	
 
 // THIS IS YOUR FIRST QUERY:
 
