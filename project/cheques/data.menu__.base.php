@@ -94,18 +94,6 @@ $Obj->Add(
 
 $Obj->Add(
     array(
-        F_NAME_ => "prov",
-        F_ALIAS_ => "Proveedores",
-        F_HELP_ => "Proveedores",
-        F_TYPE_ => "header",
-        R_TABLE_ => "",
-        F_OPER_ => "1_ Browse",
-        F_LINK_ => "",
-        F_FILTER_ => "",
-        G_SHOW_ => "2"));
-
-$Obj->Add(
-    array(
         F_NAME_ => "proveedores",
         F_ALIAS_ => "Proveedores",
         F_HELP_ => "Proveedores",
@@ -175,5 +163,29 @@ $Obj->Add(
         F_LINK_ => "db.filtro_cheques",
         F_FILTER_ => "",
         G_SHOW_ => "2"));
+
+$Obj->Add(
+    array(
+        F_NAME_ => "provs_consultar",
+        F_ALIAS_ => "Buscar Proveedores",
+        F_HELP_ => "Buscar Proveedores",
+        F_TYPE_ => "menu",
+        R_TABLE_ => "prov",
+        F_OPER_ => "20_ Consult",
+        F_LINK_ => "db.mnt_prov_cons",
+        F_FILTER_ => "",
+        G_SHOW_ => "6"));
+
+$Obj->Add(
+    array(
+        F_NAME_ => "prov",
+        F_ALIAS_ => "Proveedores",
+        F_HELP_ => "Proveedores",
+        F_TYPE_ => "header",
+        R_TABLE_ => "",
+        F_OPER_ => "1_ Browse",
+        F_LINK_ => "",
+        F_FILTER_ => "",
+        G_SHOW_ => "4"));
 
 ?>
